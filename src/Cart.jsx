@@ -1,4 +1,10 @@
 import React from "react";
+import phoneImage1 from './assets/phone-1.png';
+import phoneImage2 from './assets/phone-2.png';
+import phoneImage3 from './assets/phone-3.png';
+import phoneImage4 from './assets/phone-4.png';
+
+const images = [phoneImage1, phoneImage2, phoneImage3, phoneImage4];
 
 const Cart = ({ cartItems, onRemove, onIncrease, onDecrease, onClear }) => {
   const total = cartItems.reduce(
@@ -22,10 +28,10 @@ const Cart = ({ cartItems, onRemove, onIncrease, onDecrease, onClear }) => {
       <main className="max-w-3xl mx-auto px-4 py-10">
         <h2 className="text-3xl font-semibold text-center mb-10">YOUR BAG</h2>
 
-        {cartItems.map((item) => (
+        {cartItems.map((item, idx) => (
           <div key={item.id} className="flex items-center justify-between mb-8">
             <img
-              src={`/src/assets/${item.image}`}
+              src={images[idx]}
               alt={item.name}
               className="w-16 h-16 object-contain"
             />
